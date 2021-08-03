@@ -3,6 +3,9 @@ package com.ananananzhuo.composelibnewsample
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -18,22 +21,22 @@ class MainActivity : ComponentActivity() {
             ComposeLibNewSampleTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                   DefaultPreview()
+                    DefaultPreview()
                 }
             }
         }
     }
 }
-//
-//@Composable
-//fun Greeting(name: String) {
-//    Text(text = "Hello $name!")
-//}
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
+    listItem(content = "")
     ComposeLibNewSampleTheme {
-       listItem()
+        LazyColumn {
+            items(listOf(1, 2, 3, 4, 5, 6, 7, 8, 8)) {
+                listItem(content = "安安安安卓: $it")
+            }
+        }
     }
 }

@@ -2,8 +2,9 @@
 buildscript {
     ext {
         compose_version = '1.0.0-beta07'
-        versionName = '1.0.1-SNAPSHOT'
-        versionCode = 1
+//        versionName = '1.0.12'
+        versionName = '1.0.14'
+        versionCode = 14
     }
     ext.kotlin_version = "1.4.32"
     repositories {
@@ -21,9 +22,4 @@ buildscript {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
-}
-ext {
-    PUBLISH_GROUP_ID = "com.ananananzhuo.mvvm"        //项目包名
-    PUBLISH_ARTIFACT_ID = 'mvvm'            //项目名
-    PUBLISH_VERSION = 0.1                   //版本号
 }
