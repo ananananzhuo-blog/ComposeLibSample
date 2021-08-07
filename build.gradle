@@ -2,8 +2,8 @@
 buildscript {
     ext {
         compose_version = '1.0.0'
-        versionName = '1.0.15-SNAPSHOT'
-        versionCode = 15
+        versionName = '1.0.16-SNAPSHOT'
+        versionCode = 16
     }
     repositories {
         google()
