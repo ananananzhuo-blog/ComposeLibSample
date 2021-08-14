@@ -1,7 +1,9 @@
 package com.ananananzhuo.composelib
 
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
 import com.ananananzhuo.composelib.bean.ItemData
 
@@ -15,9 +17,10 @@ import com.ananananzhuo.composelib.bean.ItemData
 @Composable
 fun ListView(
     datas: MutableList<ItemData>,
+    state: LazyListState = rememberLazyListState(),
     click: (data: ItemData, index: Int, id: Int) -> Unit
 ) {
-    LazyColumn() {
+    LazyColumn(state = state) {
         itemsIndexed(datas) { index, item ->
             item.id = index
             listItem(itemData = item, onClick = {
@@ -25,4 +28,8 @@ fun ListView(
             })
         }
     }
+}
+
+fun changeData(datas: MutableList<ItemData>, index: Int) {
+    datas[index] = datas[index]
 }

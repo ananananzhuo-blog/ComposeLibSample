@@ -3,6 +3,7 @@ package com.ananananzhuo.composelibnewsample
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
@@ -34,15 +35,11 @@ fun show1() {
     val list = remember {
         mutableStateListOf(ItemData(content = "哈哈哈哈", title = "标题"))
     }
-    ListView(datas = list, click = { data, index, id ->
-        changedata(list, data, index, id)
+    val state = rememberLazyListState()
+    ListView(datas = list, state, click = { data, index, id ->
+//        changedata(list, data, index, id)
+        list[index].content = "12334"
+        changeData(list, index)
     })
 
-}
-
-fun changedata(list: SnapshotStateList<ItemData>, data: ItemData, index: Int, id: Int) {
-    list[index] = data.apply {
-        content = "标题你变了"
-        title = "title你变了"
-    }
 }
