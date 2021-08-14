@@ -3,6 +3,7 @@ buildscript {
     ext {
         compose_version = '1.0.0'
 //        versionName = '1.0.18-SNAPSHOT'
+//        versionCode = 18
         versionName = '1.0.19'
         versionCode = 19
     }

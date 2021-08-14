@@ -7,6 +7,7 @@ package com.ananananzhuo.composelib.constants
  **/
 
 //路由的跳转常量
+const val HOME="home"
 const val PAGE1="page1"
 const val PAGE2="page2"
 const val PAGE3="page3"
