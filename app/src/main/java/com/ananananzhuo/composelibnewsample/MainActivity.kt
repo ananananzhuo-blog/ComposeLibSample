@@ -33,7 +33,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun show1() {
     val list = remember {
-        mutableStateListOf(ItemData(content = "哈哈哈哈", title = "标题"))
+        mutableStateListOf(
+            ItemData(content = "哈哈哈哈", title = "标题"),
+        )
     }
     val state = rememberLazyListState()
     ListView(datas = list, state, click = { data, index, id ->
